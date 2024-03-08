@@ -1,7 +1,6 @@
 package org.dbWandy.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -13,10 +12,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @TableName("user")
 public class User {
+
+    //id
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-    @TableField("name")
-    private String name;
-    @TableField("age")
+
+    //账户名
+    private String username;
+
+    //真实姓名
+    private String trueName;
+
+    //密码
+    private String password;
+    
+    //年龄
     private int age;
 }
