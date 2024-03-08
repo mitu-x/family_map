@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02a1261-bb56-4012-b691-41fd1c2ff973" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/FamilyMapApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/controller/ApiController.java" afterDir="false" />
+    <list default="true" id="c02a1261-bb56-4012-b691-41fd1c2ff973" name="变更" comment="初始化 仓库">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/部署流程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dbWandy/FamilyMapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/FamilyMapApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dbWandy/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dbWandy/controller/ApiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,18 +76,28 @@
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "actions.on.save"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="HTTP 请求.generated-requests | #1">
-    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="运行单个请求">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests中的所有" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
-      <method v="2" />
+  <component name="RunManager" selected="Spring Boot.FamilyMapApplication">
+    <configuration name="FamilyMapApplicationTests.ceshi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyMap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FamilyMapApplicationTests" />
+      <option name="METHOD_NAME" value="ceshi" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="FamilyMapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
@@ -104,15 +115,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP 请求.generated-requests | #1" />
-      <item itemvalue="HTTP 请求.generated-requests中的所有" />
+      <item itemvalue="JUnit.FamilyMapApplicationTests.ceshi" />
       <item itemvalue="Spring Boot.FamilyMapApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP 请求.generated-requests | #1" />
-        <item itemvalue="HTTP 请求.generated-requests中的所有" />
         <item itemvalue="Spring Boot.FamilyMapApplication" />
+        <item itemvalue="JUnit.FamilyMapApplicationTests.ceshi" />
       </list>
     </recent_temporary>
   </component>
@@ -124,8 +133,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709629444519</updated>
-      <workItem from="1709629445955" duration="3408000" />
+      <workItem from="1709629445955" duration="19765000" />
     </task>
+    <task id="LOCAL-00001" summary="初始化 仓库">
+      <created>1709632910332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709632910332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +158,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="初始化 仓库" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化 仓库" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
