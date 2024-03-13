@@ -1,4 +1,4 @@
-package org.dbWandy.controller.config;
+package org.dbWandy.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

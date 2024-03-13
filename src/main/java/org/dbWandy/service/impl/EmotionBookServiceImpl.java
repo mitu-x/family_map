@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.dbWandy.mapper.EmotionBookMapper;
 import org.dbWandy.pojo.EmotionBook;
 import org.dbWandy.service.EmotionBookService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmotionBookServiceImpl implements EmotionBookService {
 
     EmotionBookMapper bookMapper;
@@ -17,22 +19,18 @@ public class EmotionBookServiceImpl implements EmotionBookService {
 
     /**
      * 插入多条数据
+     *
      * @param bookList book实体类列表
      * @return int
      */
     @Override
-    public int insertBookList(List<EmotionBook> bookList) {
-        int r = 0;
-        //遍历集合
-        for (EmotionBook book : bookList) {
-            //查询数据
-            r += bookMapper.insert(book) > 0 ? 1 : 0;
-        }
-        return r;
+    public Integer insertBookList(List<EmotionBook> bookList) {
+        return bookMapper.insertBatchSomeColumn(bookList);
     }
 
     /**
      * 根据人名查询多条数据
+     *
      * @param name 人名
      * @return List<EmotionBook>
      */
@@ -48,6 +46,7 @@ public class EmotionBookServiceImpl implements EmotionBookService {
 
     /**
      * 查询所有数据
+     *
      * @param bookName 人情簿子名称
      * @return List<EmotionBook>
      */
@@ -63,6 +62,7 @@ public class EmotionBookServiceImpl implements EmotionBookService {
 
     /**
      * 删除某个人情簿子
+     *
      * @param bookName 人情簿子名称
      * @return int
      */
@@ -75,4 +75,5 @@ public class EmotionBookServiceImpl implements EmotionBookService {
         //返回结果
         return bookMapper.delete(wrapper);
     }
+
 }

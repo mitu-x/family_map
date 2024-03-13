@@ -10,13 +10,15 @@ public interface EmotionBookService {
 
     /**
      * 插入多条数据
+     *
      * @param bookList book类型列表
      * @return int
      */
-    int insertBookList(List<EmotionBook> bookList);
+    Integer insertBookList(List<EmotionBook> bookList);
 
     /**
      * 根据人名查询多条数据
+     *
      * @param name 人名
      * @return List<EmotionBook>
      */
@@ -24,6 +26,7 @@ public interface EmotionBookService {
 
     /**
      * 查询所有数据
+     *
      * @param bookName 人情簿子名称
      * @return List<EmotionBook>
      */
@@ -31,6 +34,7 @@ public interface EmotionBookService {
 
     /**
      * 删除某个人情簿子
+     *
      * @param bookName 人情簿子名称
      * @return int
      */

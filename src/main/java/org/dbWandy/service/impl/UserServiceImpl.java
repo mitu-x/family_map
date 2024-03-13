@@ -4,9 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.dbWandy.mapper.UserMapper;
 import org.dbWandy.pojo.User;
 import org.dbWandy.service.UserService;
-import org.springframework.stereotype.Service;
 
-@Service
 public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 

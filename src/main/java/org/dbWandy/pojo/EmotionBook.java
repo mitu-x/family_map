@@ -20,7 +20,7 @@ public class EmotionBook {
 
     //主键 uuid
     @TableId(type = IdType.ASSIGN_UUID)
-    private String UUID;
+    private String uuid;
 
     //人情簿子名称--加入此数据库表中含有多个人情簿子，则以此用以区分
     @TableField(value = "book_name")
