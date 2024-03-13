@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 public class User {
 
     //id
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    private Long id;
 
     //账户名
     private String username;
@@ -25,7 +25,7 @@ public class User {
 
     //密码
     private String password;
-    
+
     //年龄
     private int age;
 }

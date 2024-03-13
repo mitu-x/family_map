@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+<body>
+<input type="file">
+<button>上传</button>
+
+<script>
+
+
+    let btn = document.querySelector('button');
+
+    btn.addEventListener('click', function () {
+        let file = document.querySelector('input[type="file"]').files[0];
+
+        let formData = new FormData();
+        formData.append('file', file);
+
+        let xhr = new XMLHttpRequest();
+        //解决跨越
+        xhr.withCredentials = true;
+        xhr.open('POST', 'http://localhost:8888/book/importExcel', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.log('上传失败');
+            }
+        };
+        xhr.send(formData);
+    })
+
+
+</script>
+</body>
+</html>
