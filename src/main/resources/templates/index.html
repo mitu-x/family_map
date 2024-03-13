@@ -6,14 +6,19 @@
 </head>
 <body>
 <input type="file">
-<button>上传</button>
-
+<button id="upload">上传</button>
+<label>
+    人名
+    <input type="text">
+</label>
+<button id="search">查询</button>
 <script>
 
 
-    let btn = document.querySelector('button');
+    let upBtn = document.querySelector('#upload');
+    let seaBtn = document.querySelector('#search');
 
-    btn.addEventListener('click', function () {
+    upBtn.addEventListener('click', function () {
         let file = document.querySelector('input[type="file"]').files[0];
 
         let formData = new FormData();
@@ -33,7 +38,20 @@
         xhr.send(formData);
     })
 
+    seaBtn.addEventListener('click', function () {
+        let name = document.querySelector('input[type="text"]').value;
+        let xhr = new XMLHttpRequest();
 
+        xhr.open('GET', 'http://localhost:8888/book/getListByName?name=' + name, true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.log('查询失败');
+            }
+        };
+        xhr.send();
+    })
 </script>
 </body>
 </html>
