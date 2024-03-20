@@ -7,6 +7,7 @@ import org.dbWandy.service.EmotionBookService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class EmotionBookServiceImpl implements EmotionBookService {
@@ -39,7 +40,7 @@ public class EmotionBookServiceImpl implements EmotionBookService {
         //创建wrapper
         LambdaQueryWrapper<EmotionBook> wrapper = new LambdaQueryWrapper<>();
         //注入查询条件
-        wrapper.eq(EmotionBook::getName, name);
+        wrapper.like(!Objects.equals(name, ""), EmotionBook::getName, name);
         //返回查询结果
         return bookMapper.selectList(wrapper);
     }

@@ -8,6 +8,7 @@ import org.dbWandy.dao.BookExcleData;
 import org.dbWandy.pojo.EmotionBook;
 import org.dbWandy.service.impl.EmotionBookServiceImpl;
 import org.dbWandy.util.BaseResult;
+import org.dbWandy.util.ResultListObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -111,16 +112,30 @@ public class EmotionBookController {
      * @return BaseResult
      */
     @RequestMapping("getListByName")
-    public BaseResult<Map<String, String>> getListByName(String name) {
-        BaseResult<Map<String, String>> result = new BaseResult<>();
-        EmotionBook emotionBook = emotionBookService.getListByName(name).get(0);
-        Map<String, String> map = new HashMap<>();
-        map.put("bookName", emotionBook.getBookName());
-        map.put("name", emotionBook.getName());
-        map.put("cash", emotionBook.getCash() + "");
-        //map.put("createDate", emotionBook.getCreateDate() + "");
-        result.setResult(map);
-        return result;
+    public BaseResult<ResultListObject<Map<String, String>>> getListByName(String name) {
+        BaseResult<ResultListObject<Map<String, String>>> result = new BaseResult<>();
+        ResultListObject<Map<String, String>> resultListObject = new ResultListObject<>();
+        try {
+            List<EmotionBook> listByName = emotionBookService.getListByName(name);
+            List<Map<String, String>> resultList = new ArrayList<>();
+            listByName.forEach(e -> {
+                Map<String, String> map = new HashMap<>();
+                map.put("bookName", e.getBookName());
+                map.put("name", e.getName());
+                map.put("cash", e.getCash() + "");
+                resultList.add(map);
+            });
+            resultListObject.setData(resultList);
+            resultListObject.setPage(1);
+            resultListObject.setTotal(resultList.size());
+            result.setResult(resultListObject);
+            return result;
+        } catch (Exception e) {
+            result.setErrorMsg(e.getMessage());
+            result.setErrorCode("500");
+            result.setSuccess(false);
+            return result;
+        }
     }
 
     /**
