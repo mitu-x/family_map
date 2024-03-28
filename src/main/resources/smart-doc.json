@@ -1,0 +1,7 @@
+{
+  "outPath": "src/main/resources/doc",
+  "allInOne": true,
+  "responseBodyAdvice":{
+    "className":"org.dbWandy.util.BaseResult"
+  }
+}
