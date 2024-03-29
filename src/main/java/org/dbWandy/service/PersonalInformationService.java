@@ -55,4 +55,11 @@ public interface PersonalInformationService {
      * @return PersonalInformation
      */
     List<Map<String, Object>> getByGeneration(int generation);
+
+    /**
+     * 根据uuid查询配偶信息
+     * @param uuid uuid
+     * @return list
+     */
+    List<Map<String, String>> getSpousesByUuid(String uuid);
 }

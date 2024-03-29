@@ -66,7 +66,7 @@ public class PersonalInformationController {
      * 新增一个人员
      * @param p 人员信息
      */
-    @RequestMapping("insetOne")
+    @RequestMapping("insertOne")
     @ResponseBody
     public void insertOne(@RequestBody PersonalInformation p) {
         boolean b = personalInformationService.insertOne(p);

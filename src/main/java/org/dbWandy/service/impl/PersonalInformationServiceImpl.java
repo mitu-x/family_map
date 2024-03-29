@@ -142,4 +142,29 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
         return personalInformationMapper.selectMaps(wrapper);
     }
 
+    /**
+     * 根据uuid查询配偶信息
+     * @param uuid uuid
+     * @return list
+     */
+    @Override
+    public List<Map<String, String>> getSpousesByUuid(String uuid) {
+        //创建wrapper
+        LambdaQueryWrapper<PersonalInformation> wrapper = new LambdaQueryWrapper<>();
+        //注入查询条件
+        wrapper.eq( PersonalInformation::getUuid, uuid).select(PersonalInformation::getUuidSpouse);
+        String s = personalInformationMapper.selectMaps(wrapper).get(0).toString();
+
+        String[] split = s.split(",");
+        List<Map<String, String>> l = new ArrayList<>();
+        for (int i = split.length - 1; i >= 0; i--) {
+            Map<String,String> map = new HashMap<>();
+            String name = getNameByUuid(split[i]);
+            map.put("name",name);
+            map.put("uuid",split[i]);
+            l.add(map);
+        }
+        return l;
+    }
+
 }
